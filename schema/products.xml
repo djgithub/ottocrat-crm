@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<schema version="0.2">
+
+<table name="ottocrat_field">
+		<field name="tabid" type="I" size="19">
+			<notnull />
+		</field>
+		<field name="fieldid" type="I" size="19">
+			<key />
+			<autoincrement />
+		</field>
+		<field name="columnname" type="C" size="30">
+			<notnull />
+		</field>
+		<field name="tablename" type="C" size="50">
+			<notnull />
+		</field>
+		<field name="generatedtype" type="I" size="19">
+			<notnull />
+			<default value="0" />
+		</field>
+		<field name="uitype" type="C" size="30">
+			<notnull />
+		</field>
+		<field name="fieldname" type="C" size="50">
+			<notnull />
+		</field>
+		<field name="fieldlabel" type="C" size="50">
+			<notnull />
+		</field>
+		<field name="readonly" type="I" size="1">
+			<notnull />
+		</field>
+		<field name="presence" type="I" size="19">
+			<notnull />
+			<default value="1" />
+		</field>
+		<field name="defaultvalue" type="X">
+		</field>
+		<field name="maximumlength" type="I" size="19" />
+		<field name="sequence" type="I" size="19" />
+		<field name="block" type="I" size="19" />
+		<field name="displaytype" type="I" size="19" />
+		<field name="typeofdata" type="C" size="100" />
+		<field name="quickcreate" type="I" size="10">
+			<notnull />
+			<default value="1" />
+		</field>
+		<field name="quickcreatesequence" type="I" size="19" />
+		<field name="info_type" type="C" size="20" />
+		<field name="masseditable" type="I" size="10">
+			<notnull />
+			<default value="1" />
+		</field>
+
+		<index name="field_tabid_idx">
+			<col>tabid</col>
+		</index>
+		<index name="field_fieldname_idx">
+			<col>fieldname</col>
+		</index>
+		<index name="field_block_idx">
+			<col>block</col>
+		</index>
+		<index name="field_displaytype_idx">
+			<col>displaytype</col>
+		</index>
+		<opt platform="mysql">Engine=InnoDB</opt>
+	</table>
+</schema>

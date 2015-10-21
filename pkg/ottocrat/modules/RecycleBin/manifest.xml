@@ -1,0 +1,19 @@
+<?xml version='1.0'?>
+<module>
+<exporttime>2009-01-30 13:02:10</exporttime>
+<name>RecycleBin</name>
+<label>Recycle Bin</label>
+<parent>Tools</parent>
+<type>extension</type>
+<version>1.5</version>
+<dependencies>
+<ottocrat_version>6.0.0rc</ottocrat_version>
+<ottocrat_max_version>6.*</ottocrat_max_version>
+</dependencies>
+<migrations>
+	<migration version='1.0'>		
+	</migration>
+</migrations>
+<tables>
+</tables>
+</module>

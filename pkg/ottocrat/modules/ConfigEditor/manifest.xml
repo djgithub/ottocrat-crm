@@ -1,0 +1,15 @@
+<?xml version='1.0'?>
+<module>
+<exporttime>2010-12-23 13:46:05</exporttime>
+<name>ConfigEditor</name>
+<label>ConfigEditor</label>
+<parent></parent>
+<type>extension</type>
+<version>1.9</version>
+<dependencies>
+<ottocrat_version>5.1.0</ottocrat_version>
+<ottocrat_max_version>6.*</ottocrat_max_version>
+</dependencies>
+<tables>
+</tables>
+</module>

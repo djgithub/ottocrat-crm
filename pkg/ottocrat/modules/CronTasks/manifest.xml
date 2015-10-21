@@ -1,0 +1,12 @@
+<?xml version='1.0'?>
+<module>
+<name>CronTasks</name>
+<label>CronTasks</label>
+<parent></parent>
+<type>extension</type>
+<version>1.2</version>
+<dependencies>
+<ottocrat_version>5.3.1</ottocrat_version>
+<ottocrat_max_version>6.*</ottocrat_max_version>
+</dependencies>
+</module>

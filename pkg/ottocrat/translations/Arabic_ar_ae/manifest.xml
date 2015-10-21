@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<module>
+  <type>language</type>
+  <name>Arabic</name>
+  <label>Arabic</label>
+  <prefix>ar_ae</prefix>
+  <version>6.0.0</version>
+  <dependencies>
+    <ottocrat_version>6.0.0rc</ottocrat_version>
+	<ottocrat_max_version>6.*</ottocrat_max_version>
+  </dependencies>
+</module>

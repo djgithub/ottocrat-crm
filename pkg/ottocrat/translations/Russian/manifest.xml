@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<module>
+	<type>language</type>
+	<name>Russian</name>
+	<label>Russian</label>
+	<prefix>ru_ru</prefix>
+	<version>6.0.0</version>
+	<encoding>UTF-8</encoding>
+	<author>ottocratCRM</author>
+	<license>MPL1.1</license>
+	<dependencies>
+	  <ottocrat_version>6.0.0.rc</ottocrat_version>
+	  <ottocrat_max_version>6.*</ottocrat_max_version>
+  </dependencies>
+</module>
+

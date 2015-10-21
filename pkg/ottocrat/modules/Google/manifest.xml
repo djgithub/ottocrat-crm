@@ -1,0 +1,17 @@
+<?xml version='1.0'?>
+<module>
+<exporttime>2013-03-29 10:08:29</exporttime>
+<name>Google</name>
+<label>Google</label>
+<parent></parent>
+<type>extension</type>
+<version>1.5</version>
+<dependencies>
+<ottocrat_version>6.0.0rc</ottocrat_version>
+<ottocrat_max_version>6.*</ottocrat_max_version>
+</dependencies>
+<tables>
+</tables>
+<crons>
+</crons>
+</module>

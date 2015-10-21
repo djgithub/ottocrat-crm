@@ -1,0 +1,9 @@
+# ------------------------------------------
+# Ottocrat CRM . -- http://www.ottocrat.com
+# Robot Exclusion File -- robots.txt
+# Author:  ottocrat CRM
+# Last Updated:  17/11/06 
+# ------------------------------------------
+
+User-agent: *
+Disallow: /

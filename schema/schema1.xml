@@ -1,0 +1,2 @@
+<?xml version="1.0" ?>
+<schema version="0.2"><table name="activatedonce"><field name="workflow_id" type="int(11)" > <key /></field><field name="entity_id" type="int(11)" > <key /></field><opt platform="mysql">Engine=InnoDB</opt></table></schema>
