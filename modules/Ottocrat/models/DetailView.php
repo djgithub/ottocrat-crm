@@ -147,14 +147,27 @@ class Ottocrat_DetailView_Model extends Ottocrat_Base_Model {
 		$parentModuleModel = $this->getModule();
 		$relatedLinks = array();
 
-		if($parentModuleModel->isSummaryViewSupported()) {
+
+
+		//ottocrat-changes
+
+		if($parentModuleModel->isTrackingEnabled()) {
 			$relatedLinks = array(array(
+				'linktype' => 'DETAILVIEWTAB',
+				'linklabel' => 'LBL_UPDATES',
+				'linkurl' =>$recordModel->getDetailUrlWNoChange().'&mode=showRecentActivities&page=1',
+				'linkicon' => ''
+			));
+		}
+
+		if($parentModuleModel->isSummaryViewSupported()) {
+			$relatedLinks[] = array(
 				'linktype' => 'DETAILVIEWTAB',
 				'linklabel' => vtranslate('SINGLE_' . $moduleName, $moduleName) . ' ' . vtranslate('LBL_SUMMARY', $moduleName),
 				'linkKey' => 'LBL_RECORD_SUMMARY',
 				'linkurl' => $recordModel->getDetailUrlWNoChange().'&mode=showDetailViewByMode&requestMode=summary',
 				'linkicon' => ''
-			));
+			);
 		}
 		//link which shows the summary information(generally detail of record)
 		$relatedLinks[] = array(
@@ -175,14 +188,6 @@ class Ottocrat_DetailView_Model extends Ottocrat_Base_Model {
 			);
 		}
 
-		if($parentModuleModel->isTrackingEnabled()) {
-			$relatedLinks[] = array(
-					'linktype' => 'DETAILVIEWTAB',
-					'linklabel' => 'LBL_UPDATES',
-					'linkurl' =>$recordModel->getDetailUrlWNoChange().'&mode=showRecentActivities&page=1',
-					'linkicon' => ''
-			);
-		}
 
 
 		$relationModels = $parentModuleModel->getRelations();

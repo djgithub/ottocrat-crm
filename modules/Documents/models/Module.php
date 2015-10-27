@@ -102,7 +102,7 @@ class Documents_Module_Model extends Ottocrat_Module_Model {
 	 * @return <string> - url
 	 */
 	public function getAddFolderUrl() {
-		return Ottocrat_Request:: encryptLink('index.php?module='.$this->getName().'&view=AddFolder');
+		return 'index.php?module='.$this->getName().'&view=AddFolder';// encryption is not required
 	}
 	
 	/**

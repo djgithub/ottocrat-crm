@@ -64,7 +64,7 @@ class Ottocrat_RelationListView_Model extends Ottocrat_Base_Model {
 		$parentRecordModule = $this->getParentRecordModel();
 		$parentModule = $parentRecordModule->getModule();
 
-		$createViewUrl = $relatedModel->getCreateEventRecordUrl().'&sourceModule='.$parentModule->get('name').
+		$createViewUrl = $relatedModel->getCreateEventRecordUrlWNC().'&sourceModule='.$parentModule->get('name').
 								'&sourceRecord='.$parentRecordModule->getId().'&relationOperation=true';
 
 		//To keep the reference fieldname and record value in the url if it is direct relation
@@ -72,7 +72,7 @@ class Ottocrat_RelationListView_Model extends Ottocrat_Base_Model {
 			$relationField = $relationModel->getRelationField();
 			$createViewUrl .='&'.$relationField->getName().'='.$parentRecordModule->getId();
 		}
-		return $createViewUrl;
+		return  Ottocrat_Request:: encryptLink($createViewUrl);
 	}
 
 	public function getCreateTaskRecordUrl(){
@@ -81,7 +81,7 @@ class Ottocrat_RelationListView_Model extends Ottocrat_Base_Model {
 		$parentRecordModule = $this->getParentRecordModel();
 		$parentModule = $parentRecordModule->getModule();
 
-		$createViewUrl = $relatedModel->getCreateTaskRecordUrl().'&sourceModule='.$parentModule->get('name').
+		$createViewUrl = $relatedModel->getCreateTaskRecordUrlWNC().'&sourceModule='.$parentModule->get('name').
 								'&sourceRecord='.$parentRecordModule->getId().'&relationOperation=true';
 
 		//To keep the reference fieldname and record value in the url if it is direct relation
@@ -89,7 +89,7 @@ class Ottocrat_RelationListView_Model extends Ottocrat_Base_Model {
 			$relationField = $relationModel->getRelationField();
 			$createViewUrl .='&'.$relationField->getName().'='.$parentRecordModule->getId();
 		}
-		return $createViewUrl;
+		return Ottocrat_Request:: encryptLink($createViewUrl);
 	}
 
 	public function getLinks(){

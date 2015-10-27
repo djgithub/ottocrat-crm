@@ -70,7 +70,7 @@ class CRMEntity {
 				$anyValue = true;
 				break;
 			}
-		}
+		} //print_r($anyValue);die;
 		if(!$anyValue) {
 			die("<center>" .getTranslatedString('LBL_MANDATORY_FIELD_MISSING')."</center>");
 		}
@@ -78,7 +78,7 @@ class CRMEntity {
 		$this->db->println("TRANS saveentity starts $module");
 		$this->db->startTransaction();
 
-
+		//print_r($anyValue);die;
 		foreach ($this->tab_name as $table_name) {
 
 			if ($table_name == "ottocrat_crmentity") {
@@ -288,7 +288,7 @@ class CRMEntity {
 			$sql = "insert into ottocrat_crmentity (crmid,smcreatorid,smownerid,setype,description,modifiedby,createdtime,modifiedtime) values(?,?,?,?,?,?,?,?)";
 			$params = array($current_id, $current_user->id, $ownerid, $module, $description_val, $current_user->id, $created_date_var, $modified_date_var);
 			$adb->pquery($sql, $params);
-            
+
             $this->column_fields['createdtime'] = $created_date_var;
             $this->column_fields['modifiedtime'] = $modified_date_var;
 			$this->column_fields['modifiedby'] = $current_user->id;
@@ -797,7 +797,7 @@ class CRMEntity {
 		$em->triggerEvent("ottocrat.entity.beforesave.final", $entityData);
 		}
 		//Event triggering code ends
-
+//echo $fileid;die;
 		//GS Save entity being called with the modulename as parameter
 		$this->saveentity($module_name, $fileid);
 

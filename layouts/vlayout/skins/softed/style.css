@@ -36,12 +36,12 @@
 
 @font-face {
     font-family: 'proxima_nova_rgregular';
-    src: url('font/proximanova-regular-webfont.eot');
-    src: url('font/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('font/proximanova-regular-webfont.woff2') format('woff2'),
-         url('font/proximanova-regular-webfont.woff') format('woff'),
-         url('font/proximanova-regular-webfont.ttf') format('truetype'),
-         url('font/proximanova-regular-webfont.svg#proxima_nova_rgregular') format('svg');
+    src: url('http://www.ottocrat.com/develop/ottocrat/layouts/vlayout/skins/softed/font/proximanova-regular-webfont.eot');
+    src: url('http://www.ottocrat.com/develop/ottocrat/layouts/vlayout/skins/softed/font/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('http://www.ottocrat.com/develop/ottocrat/layouts/vlayout/skins/softed/font/proximanova-regular-webfont.woff2') format('woff2'),
+         url('http://www.ottocrat.com/develop/ottocrat/layouts/vlayout/skins/softed/font/proximanova-regular-webfont.woff') format('woff'),
+         url('http://www.ottocrat.com/develop/ottocrat/layouts/vlayout/skins/softed/font/proximanova-regular-webfont.ttf') format('truetype'),
+         url('http://www.ottocrat.com/develop/ottocrat/layouts/vlayout/skins/softed/font/proximanova-regular-webfont.svg#proxima_nova_rgregular') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -574,16 +574,10 @@ hr {
 }
 .mainContainer #leftPanel {
   background-color: #eeeff2;
-  background-image: -moz-linear-gradient(top, #eeeff2, #eeeff2);
-  background-image: -ms-linear-gradient(top, #eeeff2, #eeeff2);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#eeeff2), to(#eeeff2));
-  background-image: -webkit-linear-gradient(top, #eeeff2, #eeeff2);
-  background-image: -o-linear-gradient(top, #eeeff2, #eeeff2);
-  background-image: linear-gradient(top, #eeeff2, #eeeff2);
+  background-image: -moz-linear-gradient(center top , #fff, #fff);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeff2', endColorstr='#eeeff2', GradientType=0);
-  border-color: #eeeff2 #eeeff2 #c3c6d1;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  margin-top: 25px;
 }
 .toggleButton {
   background: #eeeff2;
@@ -636,13 +630,13 @@ hr {
   text-decoration: none;
 }
 .quickLinksDiv p.selectedQuickLink {
-  background-color: #163558;
-  background-image: -moz-linear-gradient(top, #163558, #163558);
-  background-image: -ms-linear-gradient(top, #163558, #163558);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#163558), to(#163558));
-  background-image: -webkit-linear-gradient(top, #163558, #163558);
-  background-image: -o-linear-gradient(top, #163558, #163558);
-  background-image: linear-gradient(top, #163558, #163558);
+  background-color: #6a9ac4;
+  background-image: -moz-linear-gradient(top, #6a9ac4, #6a9ac4);
+  background-image: -ms-linear-gradient(top, #6a9ac4, #6a9ac4);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#6a9ac4), to(#6a9ac4));
+  background-image: -webkit-linear-gradient(top, #6a9ac4, #6a9ac4);
+  background-image: -o-linear-gradient(top, #6a9ac4, #6a9ac4);
+  background-image: linear-gradient(top, #6a9ac4, #6a9ac4);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#163558', endColorstr='#163558', GradientType=0);
   border-color: #163558 #163558 #07101b;
@@ -657,7 +651,7 @@ hr {
 }
 .quickLinksDiv p.selectedQuickLink a:after {
   border-bottom: 19px solid rgba(0, 0, 0, 0);
-  border-left: 10px solid #163558;
+  border-left: 10px solid #6a9ac4;
   border-top: 19px solid rgba(0, 0, 0, 0);
   content: " ";
   display: inline-block;
@@ -1044,7 +1038,9 @@ li.ui-timepicker-selected,
   overflow-y: visible;
 }
 .contents-bottomscroll {
+  margin: 0 auto;
   overflow-x: auto !important;
+  width: 98%;
 }
 .bottomscroll-div,
 .topscroll-div {
@@ -3335,11 +3331,11 @@ td.listViewEntryValue .row-fluid input {
     padding: 0; 
     margin-bottom: 0; 
 } 
-.listViewContentDiv { 
-    position: relative; 
+.listViewContentDiv {
+  background: #fff none repeat scroll 0 0;
+  padding-bottom: 19px;
+  position: relative;
 }
-
-
 
 <!--/////          New CSS Add From Here        ////////////-->
 
@@ -3374,9 +3370,7 @@ transition: opacity 0.2s 1s ease;transition: all 0.3s ease 0s;
 }
 
 .quickWidgetContainer li a {
- 
-  font-size: 13px;
- 
+  font-size: 15px;
 }
 
 
@@ -3387,6 +3381,10 @@ transition: opacity 0.2s 1s ease;transition: all 0.3s ease 0s;
   text-decoration: none;
   transition: background-position 0.1s linear 0s;transition: opacity 0.2s 1s ease;transition: all 0.3s ease 0s;
 }
+
+
+ 
+
 
 
 .btn:hover {
@@ -3426,7 +3424,7 @@ button.btn.addButton {
 }
 
 .gridster ul li.dashboardWidget .dashboardWidgetHeader .dashboardTitle {
-  font-size: 15px;
+  font-size: 19px;
   font-weight: normal;
   text-align: left;
 }
@@ -3444,23 +3442,18 @@ button.btn.addButton {
   padding: 5px 4px;margin-left: 5px;
 }
 .gridster ul li.dashboardWidget .dashboardWidgetHeader {
-  background-color: #d4e4f9;
-  background-image: -moz-linear-gradient(center top , #c6ddfb, #c6ddfb);
+  background-color: #fff;
+  background-image: -moz-linear-gradient(center top , #fff, #fff);
   background-repeat: repeat-x;
-  border-bottom: 1px solid #c6ddfb !important;
-/*  border-left-color: rgba(0, 0, 0, 0.1);
-  border-right-color: rgba(0, 0, 0, 0.1);*/
- /* border-top: 1px solid #d1d1d3;*/
-  color: #444444;
+  border-bottom: 1px solid #a8d7f9 !important;
+  color: #0072c6;
   cursor: move;
-  padding: 5px;
+  padding: 12px 5px;
   text-shadow: none;
 }
-
-
 .gridster ul li.dashboardWidget {
   background: none repeat scroll 0 0 #ffffff;
-  border: 1px solid #b6d6fe;
+  border: 1px solid #e3e3e3;
   border-radius: 0;
   box-shadow: 0 0 0 0 #dddddd;
 }
@@ -3553,11 +3546,11 @@ button.btn.addButton {
 }
 
 .quickWidgetContainer .quickWidget .quickWidgetHeader {
-  background-color: transparent;
-  background-image: none;
-  background-repeat: repeat-x;
+  background-color: #f5f5f5;
   border-color: #ffffff rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
   border-top: 0 solid #ffffff;
+  color: #fff !important;
   cursor: pointer;
   padding: 7px 11px;
   text-decoration: none !important;
@@ -3603,7 +3596,7 @@ button.btn.addButton {
 }
 
 .commonActionsContainer .actionsContainer {
-  background-color: #d8f4ff;
+  background-color: #ffffff;
 }
  
 .alphabetSearch.textAlignCenter.cursorPointer {
@@ -3708,7 +3701,7 @@ button.btn[data-trigger="listSearch"] {
   border-color: #0072c6;   
 }
 .navbar .dropdown-menu, .dropdown-menu {
-  background-color: #d6eeff;
+  background-color: #fbf6ee;
 }
 
 .dashboardContainer .dashboardHeading h2 {
@@ -3751,8 +3744,8 @@ button.btn[data-trigger="listSearch"] {
 }
 
 .listViewEntriesDiv .listViewHeaders th {
-  background-color: #dfecfc;
-  background-image: -moz-linear-gradient(center top , #dfecfc, #dfecfc);
+/*  background-color: #dfecfc;
+  background-image: -moz-linear-gradient(center top , #dfecfc, #dfecfc);*/
   background-repeat: repeat-x;
   border-bottom: 1px solid #dddddd;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) #dddddd;
@@ -3978,10 +3971,28 @@ button.btn.addButton {
 
 }
 .commonActionsContainer .companyLogo img {
- /*  opacity: 0;*/
+    opacity: 0.1; 
   word-wrap: break-word;
 }
  
+ #_mailmanagermaindiv_ .span2.row-fluid {
+  background-attachment: scroll;
+  background-clip: border-box;
+  background-color: #fff;
+  background-image: none;
+  background-origin: padding-box;
+  background-position: 0 0;
+  background-repeat: repeat;
+  background-size: auto auto;
+  margin-top: 30px;
+}
+
+#_mailmanagermaindiv_ .contentsDiv.span10 {
+  background-color: #fff;
+  margin-left: 2% !important;
+  margin-top: 30px;
+  width: 80%;
+}
 #headerLinks {
 /*background-color: #cfe9fe;*/
   float: right !important;
@@ -4057,15 +4068,12 @@ button.btn.addButton {
 }
 
 .toggleButton {
-  border-left-color: #dddddd;
-  border-left-style: solid;
-  border-left-width: 1px;
-  border-right-color: -moz-use-text-color;
-  border-right-style: none;
-  border-right-width: medium;
-  right: 2px !important;
+  background-color: #fff;
+  border-left: 1px solid #dddddd;
+  border-right: medium none;
+/*  right: 0px !important;
+*/  top: 25px;
 }
-
 
 .alphabetSorting.noprint table {
   display: none;
@@ -4077,11 +4085,145 @@ button.btn.addButton {
   padding: 5px;
 }
 
+.table-bordered {
+  border: 1px solid #ddd;
+  border-collapse: separate;
+  border-radius: 4px;
+  width: 98%;
+}
 /*//////////////New Css for Header Changed for theme changes /////////////////*/
 
+#rightPanel #Documents_listView_basicAction_LBL_ADD_RECORD {
+  background-image: none;
+  padding-left: 12px;
+}
 
+#rightPanel #Documents_listView_basicAction_LBL_ADD_RECORD {
+  background-image: none;
+  padding-left: 7px;
+}
+
+.listViewEntriesTable td.listViewEntryValue, .listViewEntries td {
+  cursor: pointer;
+  overflow-x: visible;
+  overflow-y: visible;
+  padding-bottom: 8px;
+  padding-left: 8px;
+  padding-right:8px;
+  padding-top: 12px;
+  vertical-align: middle;
+}
+
+.table.table-bordered.listViewEntriesTable tr:nth-of-type(2n+1) {
+  background-color: #eef4f7 ;
+}
  
+#_mailmanagermaindiv_ .collapse .row-fluid .span12 .nav-list li:first-child a {
+  background-color: #35aa47;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  color: #fff; margin-top:5px; margin-bottom:5px
+}
+
+#_mailmanagermaindiv_ .collapse .row-fluid .span12 .nav-list li a {
+	padding:10px
+ 
+}
+
+#_mailmanagermaindiv_ .quickWidgetContainer li a {
+  background-color: #f4f9fd;
+  font-size: 13px;
+}
+
+#commonMoreMenu .dropdown-menu.moreMenus {
+  top: 39px;
+  width: 35em !important;
+}
+.navbar .dropdown-menu::after {
+  
+}
+
+.mainContainer .span2.row-fluid {
+  background-color: #fff;
+  margin-top: 30px;
+}
+.contentsDiv.span10.marginLeftZero {
+  background-color: #fff;
+  margin-left: 26px !important;
+  margin-top: 30px;
+  width: 80%;
+}
 
 
+#calendarview .fc-header-right {
+  width: 141px;
+}
+#calendarview .fc-header-center {
+  width: 214px;
+}
 
-<!--/////          New CSS Add From Here        ////////////-->
+/*.font-x-small.updateInfoContainer:nth-of-type(2n+1) {
+  margin-bottom: 10px;
+}*/
+.navbar .dropdown-menu, .dropdown-menu {
+  background-color: #fbf6ee;
+}
+.navbar .dropdown-menu::after {
+  border-bottom-color: #333;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-top-color: transparent;
+}
+
+.navbar .pull-right .dropdown-menu li a:hover {
+  color: #fff;
+}
+ 
+.dropdown-menu .divider {
+  
+  height: 0px;
+  margin-bottom: 0;
+  margin-left: 1px;
+  margin-right: 1px;
+  margin-top: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.contents #updates .unstyled > li {
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.detailViewContainer {
+  background-color: #fff;
+  margin-top: 15px;
+}
+
+ #rightPanel.span10 .toggleButton {
+  right: -13px !important;
+  width: 7px;
+}
+
+#rightPanel.span12 .toggleButton {
+  right:2px !important;   
+}
+.popover.popover-tooltip.right.in div{
+	width:550px !important;
+	
+	
+}
+
+.popover.popover-tooltip.right.in div table{
+	padding-right:20px !important
+ 
+}
+
+.popover.popover-tooltip.right.in div table td  {
+	 width:250px !important 
+
+	
+}
+
+<!--/////  New CSS Add From Here        ////////////-->

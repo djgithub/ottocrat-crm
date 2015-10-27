@@ -29,31 +29,31 @@ class DefaultDataPopulator extends CRMEntity {
 	function create_tables() {
 		global $app_strings;
 
-		$this->db->query("INSERT INTO ottocrat_tab(tabid,name,presence,tabsequence,tablabel,customized,ownedby,isentitytype,parent) VALUES (3,'Home',0,1,'Home',0,1,0,null)");
+		$this->db->query("INSERT INTO ottocrat_tab(tabid,name,presence,tabsequence,tablabel,customized,ownedby,isentitytype,parent) VALUES (3,'Home',1,1,'Home',0,1,0,null)");
 		$this->db->query("INSERT INTO ottocrat_tab(tabid,name,presence,tabsequence,tablabel,customized,ownedby,isentitytype,parent) VALUES (7,'Leads',0,4,'Leads',0,0,1,'Sales')");
 		$this->db->query("INSERT INTO ottocrat_tab(tabid,name,presence,tabsequence,tablabel,customized,ownedby,isentitytype,parent) VALUES (6,'Accounts',0,5,'Accounts',0,0,1,'Sales')");
 		$this->db->query("INSERT INTO ottocrat_tab(tabid,name,presence,tabsequence,tablabel,customized,ownedby,isentitytype,parent) VALUES (4,'Contacts',0,6,'Contacts',0,0,1,'Sales')");
-		$this->db->query("INSERT INTO ottocrat_tab(tabid,name,presence,tabsequence,tablabel,customized,ownedby,isentitytype,parent) VALUES (2,'Potentials',0,7,'Potentials',0,0,1,'Sales')");
+		$this->db->query("INSERT INTO ottocrat_tab(tabid,name,presence,tabsequence,tablabel,customized,ownedby,isentitytype,parent) VALUES (2,'Potentials',1,7,'Potentials',0,0,1,'Sales')");
 		$this->db->query("INSERT INTO ottocrat_tab(tabid,name,presence,tabsequence,tablabel,customized,ownedby,isentitytype,parent) VALUES (8,'Documents',0,9,'Documents',0,0,1,'Tools')");
 		$this->db->query("INSERT INTO ottocrat_tab(tabid,name,presence,tabsequence,tablabel,customized,ownedby,isentitytype,parent) VALUES (9,'Calendar',0,3,'Calendar',0,0,1,'Tools')");
 		$this->db->query("INSERT INTO ottocrat_tab(tabid,name,presence,tabsequence,tablabel,customized,ownedby,isentitytype,parent) VALUES (10,'Emails',0,10,'Emails',0,1,1,'Tools')");
-		$this->db->query("INSERT INTO ottocrat_tab(tabid,name,presence,tabsequence,tablabel,customized,ownedby,isentitytype,parent) VALUES (13,'HelpDesk',0,11,'HelpDesk',0,0,1,'Support')");
-		$this->db->query("INSERT INTO ottocrat_tab(tabid,name,presence,tabsequence,tablabel,customized,ownedby,isentitytype,parent) VALUES (14,'Products',0,8,'Products',0,0,1,'Inventory')");
+		$this->db->query("INSERT INTO ottocrat_tab(tabid,name,presence,tabsequence,tablabel,customized,ownedby,isentitytype,parent) VALUES (13,'HelpDesk',1,11,'HelpDesk',0,0,1,'Support')");
+		$this->db->query("INSERT INTO ottocrat_tab(tabid,name,presence,tabsequence,tablabel,customized,ownedby,isentitytype,parent) VALUES (14,'Products',1,8,'Products',0,0,1,'Inventory')");
 		$this->db->query("INSERT INTO ottocrat_tab(tabid,name,presence,tabsequence,tablabel,customized,ownedby,isentitytype,parent) VALUES (1,'Dashboard',0,12,'Dashboards',0,1,0,'Analytics')");
-		$this->db->query("INSERT INTO ottocrat_tab(tabid,name,presence,tabsequence,tablabel,customized,ownedby,isentitytype,parent) VALUES (15,'Faq',0,-1,'Faq',0,1,1,'Support')");
-		$this->db->query("INSERT INTO ottocrat_tab(tabid,name,presence,tabsequence,tablabel,customized,ownedby,isentitytype,parent) VALUES (16,'Events',2,-1,'Events',0,0,1,null)");
-		$this->db->query("INSERT INTO ottocrat_tab(tabid,name,presence,tabsequence,tablabel,customized,ownedby,isentitytype,parent) VALUES (18,'Vendors',0,-1,'Vendors',0,1,1,'Inventory')");
-		$this->db->query("INSERT INTO ottocrat_tab(tabid,name,presence,tabsequence,tablabel,customized,ownedby,isentitytype,parent) VALUES (19,'PriceBooks',0,-1,'PriceBooks',0,1,1,'Inventory')");
-		$this->db->query("INSERT INTO ottocrat_tab(tabid,name,presence,tabsequence,tablabel,customized,ownedby,isentitytype,parent) VALUES (20,'Quotes',0,-1,'Quotes',0,0,1,'Sales')");
-		$this->db->query("INSERT INTO ottocrat_tab(tabid,name,presence,tabsequence,tablabel,customized,ownedby,isentitytype,parent) VALUES (21,'PurchaseOrder',0,-1,'PurchaseOrder',0,0,1,'Inventory')");
-		$this->db->query("INSERT INTO ottocrat_tab(tabid,name,presence,tabsequence,tablabel,customized,ownedby,isentitytype,parent) VALUES (22,'SalesOrder',0,-1,'SalesOrder',0,0,1,'Sales')");
-		$this->db->query("INSERT INTO ottocrat_tab(tabid,name,presence,tabsequence,tablabel,customized,ownedby,isentitytype,parent) VALUES (23,'Invoice',0,-1,'Invoice',0,0,1,'Sales')");
-		$this->db->query("INSERT INTO ottocrat_tab(tabid,name,presence,tabsequence,tablabel,customized,ownedby,isentitytype,parent) VALUES (24,'Rss',0,-1,'Rss',0,1,0,'Tools')");
+		$this->db->query("INSERT INTO ottocrat_tab(tabid,name,presence,tabsequence,tablabel,customized,ownedby,isentitytype,parent) VALUES (15,'Faq',1,-1,'Faq',2,1,1,'Support')");
+		$this->db->query("INSERT INTO ottocrat_tab(tabid,name,presence,tabsequence,tablabel,customized,ownedby,isentitytype,parent) VALUES (16,'Events',1,-1,'Events',0,0,1,null)");
+		$this->db->query("INSERT INTO ottocrat_tab(tabid,name,presence,tabsequence,tablabel,customized,ownedby,isentitytype,parent) VALUES (18,'Vendors',1,-1,'Vendors',0,1,1,'Inventory')");
+		$this->db->query("INSERT INTO ottocrat_tab(tabid,name,presence,tabsequence,tablabel,customized,ownedby,isentitytype,parent) VALUES (19,'PriceBooks',1,-1,'PriceBooks',0,1,1,'Inventory')");
+		$this->db->query("INSERT INTO ottocrat_tab(tabid,name,presence,tabsequence,tablabel,customized,ownedby,isentitytype,parent) VALUES (20,'Quotes',1,-1,'Quotes',0,0,1,'Sales')");
+		$this->db->query("INSERT INTO ottocrat_tab(tabid,name,presence,tabsequence,tablabel,customized,ownedby,isentitytype,parent) VALUES (21,'PurchaseOrder',1,-1,'PurchaseOrder',0,0,1,'Inventory')");
+		$this->db->query("INSERT INTO ottocrat_tab(tabid,name,presence,tabsequence,tablabel,customized,ownedby,isentitytype,parent) VALUES (22,'SalesOrder',1,-1,'SalesOrder',0,0,1,'Sales')");
+		$this->db->query("INSERT INTO ottocrat_tab(tabid,name,presence,tabsequence,tablabel,customized,ownedby,isentitytype,parent) VALUES (23,'Invoice',1,-1,'Invoice',0,0,1,'Sales')");
+		$this->db->query("INSERT INTO ottocrat_tab(tabid,name,presence,tabsequence,tablabel,customized,ownedby,isentitytype,parent) VALUES (24,'Rss',1,-1,'Rss',0,1,0,'Tools')");
 		$this->db->query("INSERT INTO ottocrat_tab(tabid,name,presence,tabsequence,tablabel,customized,ownedby,isentitytype,parent) VALUES (25,'Reports',0,-1,'Reports',0,1,0,'Analytics')");
-		$this->db->query("INSERT INTO ottocrat_tab(tabid,name,presence,tabsequence,tablabel,customized,ownedby,isentitytype,parent) VALUES (26,'Campaigns',0,-1,'Campaigns',0,0,1,'Marketing')");
-		$this->db->query("INSERT INTO ottocrat_tab(tabid,name,presence,tabsequence,tablabel,customized,ownedby,isentitytype,parent) VALUES (27,'Portal',0,-1,'Portal',0,1,0,'Tools')");
-		$this->db->query("INSERT INTO ottocrat_tab(tabid,name,presence,tabsequence,tablabel,customized,ownedby,isentitytype,parent) VALUES (28,'Webmails',0,-1,'Webmails',0,1,1,null)");
-		$this->db->query("insert into ottocrat_tab(tabid,name,presence,tabsequence,tablabel,customized,ownedby,isentitytype,parent) values (29,'Users',0,-1,'Users',0,1,0,null)");
+		$this->db->query("INSERT INTO ottocrat_tab(tabid,name,presence,tabsequence,tablabel,customized,ownedby,isentitytype,parent) VALUES (26,'Campaigns',1,-1,'Campaigns',0,0,1,'Marketing')");
+		$this->db->query("INSERT INTO ottocrat_tab(tabid,name,presence,tabsequence,tablabel,customized,ownedby,isentitytype,parent) VALUES (27,'Portal',1,-1,'Portal',0,1,0,'Tools')");
+		$this->db->query("INSERT INTO ottocrat_tab(tabid,name,presence,tabsequence,tablabel,customized,ownedby,isentitytype,parent) VALUES (28,'Webmails',1,-1,'Webmails',0,1,1,null)");
+		$this->db->query("insert into ottocrat_tab(tabid,name,presence,tabsequence,tablabel,customized,ownedby,isentitytype,parent) values (29,'Users',1,-1,'Users',0,1,0,null)");
 
 		// Populate the ottocrat_blocks ottocrat_table
 		$this->db->query("insert into ottocrat_blocks values (" . $this->db->getUniqueID('ottocrat_blocks') . ",2,'LBL_OPPORTUNITY_INFORMATION',1,0,0,0,0,0,1,0)");
@@ -2388,32 +2388,32 @@ Should any need arise,please do give us a call.';
 		global $adb;
 
 		//icons for all fields
-		$icons = array("ico-users.gif",
+		$icons = array("ico-users.gif",//0
 			"ico-roles.gif",
 			"ico-profile.gif",
 			"ico-groups.gif",
 			"shareaccess.gif",
-			"orgshar.gif",
+			"orgshar.gif",//5
 			"set-IcoLoginHistory.gif",
 			"vtlib_modmng.gif",
 			"picklist.gif",
 			"picklistdependency.gif",
-			"menueditor.png",
+			"menueditor.png",//10
 			"notification.gif",
 			"inventory.gif",
 			"company.gif",
 			"ogmailserver.gif",
-			"currency.gif",
+			"currency.gif",//15
 			"taxConfiguration.gif",
 			"system.gif",
 			"announ.gif",
 			"set-IcoTwoTabConfig.gif",
-			"terms.gif",
+			"terms.gif",//20
 			"settingsInvNumber.gif",
 			"mailScanner.gif",
 			"settingsWorkflow.png",
 			"migrate.gif",
-			"Cron.png");
+			"Cron.png");//25
 
 		//labels for blocks
 		$blocks = array(
@@ -2551,8 +2551,14 @@ Should any need arise,please do give us a call.';
 			if ($i == 8 || $i == 12 || $i == 18) {
 				$seq = 1;
 			}
-			$adb->query("insert into ottocrat_settings_field (fieldid, blockid, name, iconpath, description, linkto, sequence) values .
-(" . $adb->getUniqueID('ottocrat_settings_field') . ", " . getSettingsBlockId($name_blocks[$names[$i]]) . ", '$names[$i]', '$icons[$i]', '$description[$i]', '".Ottocrat_Request:: encryptLink($links[$i])."', $seq)");
+
+			if ($i ==7 || $i == 12|| $i == 15|| $i == 16|| $i==24) {//hide for 1st phase
+				$active = 1;
+			}
+			else
+				$active=0;
+			$encLink=Ottocrat_Request:: encryptLink($links[$i]);
+			$adb->query("insert into ottocrat_settings_field (fieldid, blockid, name, iconpath, description, linkto, sequence,active) values (" . $adb->getUniqueID('ottocrat_settings_field') . ", " . getSettingsBlockId($name_blocks[$names[$i]]) . ", '$names[$i]','$icons[$i]', '$description[$i]', '$encLink', $seq,$active)");
 		}
 
 		// for Workflow in settings page of every module

@@ -52,8 +52,8 @@ class CustomerPortal {
 				if ($cur_seq != null)	$seq = $cur_seq + 1;
 			}
 
-			$adb->pquery('INSERT INTO ottocrat_settings_field(fieldid, blockid, name, iconpath, description, linkto, sequence)
-				VALUES (?,?,?,?,?,?,?)', array($fieldid, $blockid, 'LBL_CUSTOMER_PORTAL', 'portal_icon.png', 'PORTAL_EXTENSION_DESCRIPTION',Ottocrat_Request:: encryptLink('index.php?module=CustomerPortal&action=index&parenttab=Settings'), $seq));
+			$adb->pquery('INSERT INTO ottocrat_settings_field(fieldid, blockid, name, iconpath, description, linkto, sequence,active)
+				VALUES (?,?,?,?,?,?,?,?)', array($fieldid, $blockid, 'LBL_CUSTOMER_PORTAL', 'portal_icon.png', 'PORTAL_EXTENSION_DESCRIPTION',Ottocrat_Request:: encryptLink('index.php?module=CustomerPortal&action=index&parenttab=Settings'), $seq,'1'));
 
 
 		} else if($eventType == 'module.disabled') {

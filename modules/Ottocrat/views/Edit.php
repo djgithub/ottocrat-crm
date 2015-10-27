@@ -52,7 +52,11 @@ Class Ottocrat_Edit_View extends Ottocrat_Index_View {
 			$maxopp_cnt = $adb->query_result($Result, 0, "opportunities");
 			$maxorg_cnt = $adb->query_result($Result, 0, "organizations");
 			$maxfile_size = $adb->query_result($Result, 0, "file_storage");
-
+			$storage_type = $adb->query_result($Result, 0, "file_storage_type");
+		if($storage_type=='MB')
+			$maxfile_size=$maxfile_size*1000000;
+		else	if($storage_type=='GB')
+				$maxfile_size=$maxfile_size*1073741824;
 			$adb->disconnect();
 			$adb->resetSettings('mysqli', 'localhost', $OT_DB, $OT_USER, $OT_PASSWORD);
 
@@ -103,7 +107,7 @@ Class Ottocrat_Edit_View extends Ottocrat_Index_View {
 		$record = $request->get('record');
 		if(!$add_record_flg & $record=='')
 		{
-			$module_url='index.php?module=$moduleName&view=List';
+			$module_url="index.php?module=$moduleName&view=List";
 			header('Location:'.Ottocrat_Request::encryptLink($module_url));
 			exit();
 		}

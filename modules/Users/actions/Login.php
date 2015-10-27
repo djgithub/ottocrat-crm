@@ -27,10 +27,35 @@ class Users_Login_Action extends Ottocrat_Action_Controller {
 
 			if( $request->get('dbcreation')=='yes') //to create tables of product
 		{
-			$dbcre = CRMEntity::getInstance('DbCreate');
+			/*$dbcre = CRMEntity::getInstance('DbCreate');
 			$dbcre->column_fields['user_name'] = $username;
-			$dbcre->DbCreateProcess();
+			$dbcre->DbCreateProcess();*/
+			global $adb, $OT_USER,$OT_DB,$OT_PASSWORD;
+			$adb->disconnect();
+			if($_REQUEST['user']!='' & $_REQUEST['password']!='' & $_REQUEST['dbname']!='')
+
+				$adb->resetSettings('mysqli', 'localhost', $_REQUEST['dbname'], $_REQUEST['user'],$_REQUEST['password']);
+
+			else
+
+				$adb->resetSettings('mysqli', 'localhost', $OT_DB, $OT_USER, $OT_PASSWORD);
+
+			$adb->checkConnection();
+
+
+			Install_InitSchema_Model::initialize();
+
+			// Install all the available modules
+
+			Install_Utils_Model::installModules();
+
+
+
+			Install_InitSchema_Model::upgrade();
+
 			exit;
+
+
 		}
 
 		$user = CRMEntity::getInstance('Users');

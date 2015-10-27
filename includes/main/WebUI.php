@@ -94,7 +94,7 @@ class Ottocrat_WebUI extends Ottocrat_EntryPoint {
 	function process (Ottocrat_Request $request) {
 		global $OT_DB;
 		Ottocrat_Session::init();
-//print_r($request);//die;
+// echo '<pre>';print_r($request);die;
 		// Better place this here as session get initiated
                 //skipping the csrf checking for the forgot(reset) password 
                 if($request->get('mode') != 'reset' && $request->get('action') != 'Login')
@@ -194,9 +194,9 @@ class Ottocrat_WebUI extends Ottocrat_EntryPoint {
 					$module_url='index.php?module=Home&view=DashBoard';
 					header('Location:'.Ottocrat_Request::encryptLink($module_url));
 				}
-
+//print_r($handler);die;
 				$this->triggerPreProcess($handler, $request);
-				$response = $handler->process($request);
+				$response = $handler->process($request); // Enter into system from here
 				$this->triggerPostProcess($handler, $request);
 			} else {
 				throw new AppException(vtranslate('LBL_HANDLER_NOT_FOUND'));

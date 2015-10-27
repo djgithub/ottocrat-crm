@@ -55,12 +55,20 @@ class Calendar_Module_Model extends Ottocrat_Module_Model {
 		return Ottocrat_Request:: encryptLink( 'index.php?module='.$this->get('name').'&view='.$this->getEditViewName().'&mode=Events');
 	}
 
+	public function getCreateEventRecordUrlWNC() {
+		return 'index.php?module='.$this->get('name').'&view='.$this->getEditViewName().'&mode=Events';
+	}
+
 	/**
 	 * Function returns the URL for creating Task
 	 * @return <String>
 	 */
 	public function getCreateTaskRecordUrl() {
 		return Ottocrat_Request:: encryptLink( 'index.php?module='.$this->get('name').'&view='.$this->getEditViewName().'&mode=Calendar');
+	}
+
+	public function getCreateTaskRecordUrlWNC() {
+		return  'index.php?module='.$this->get('name').'&view='.$this->getEditViewName().'&mode=Calendar';
 	}
 
     /**
@@ -138,7 +146,7 @@ class Calendar_Module_Model extends Ottocrat_Module_Model {
 			$quickWidgets[] = array(
 				'linktype' => 'SIDEBARWIDGET',
 				'linklabel' => 'LBL_ACTIVITY_TYPES',
-				'linkurl' => 'module='.$this->get('name').'&view=ViewTypes&mode=getViewTypes',
+				'linkurl' =>Ottocrat_Request:: encryptLink( 'module='.$this->get('name').'&view=ViewTypes&mode=getViewTypes'),
 				'linkicon' => ''
 			);
 		}
@@ -155,7 +163,7 @@ class Calendar_Module_Model extends Ottocrat_Module_Model {
 		$quickWidgets[] = array(
 			'linktype' => 'SIDEBARWIDGET',
 			'linklabel' => 'LBL_RECENTLY_MODIFIED',
-			'linkurl' => 'module='.$this->get('name').'&view=IndexAjax&mode=showActiveRecords',
+			'linkurl' =>Ottocrat_Request:: encryptLink( 'module='.$this->get('name').'&view=IndexAjax&mode=showActiveRecords'),
 			'linkicon' => ''
 		);
 

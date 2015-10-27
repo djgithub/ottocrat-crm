@@ -1,0 +1,14 @@
+<div style='clear: both;'>
+<table style='background=color: #d9e5ef; margin-top: 10px;' width='100%' cellspacing='0' cellpadding='0' border='0' summary=''><tbody><tr><td class='error_dialog_header-start'></td><td class='error_dialog_header'></td><td class='error_dialog_header-end'></td></tr><tr><td class='error_dialog_content-start'></td><td class='error_dialog_content'><div><div style='margin: 4px 0 2px;'><span><img height='18px' border='0' alt='' src='/xmlpserver/cabo/images/swan/errorl.gif'/></span><span><img src='/xmlpserver/resource/blafplus/generic/spacer.gif' width='5px' height='1px' alt=''></span><span class='errorMessage'>Error</span></div><div style='margin: 4px 0 2px;' class='statusText'>The report cannot be rendered because of an error, please contact the administrator.</div><div style='margin: 8px 10px 2px;' class='statusText'><a class='dataLink' href='#' onclick="javascript:document.getElementById('errordetail').style.display='block';return false;">Error Detail</a></div></div></td><td class='error_dialog_content-end'></td></tr><tr><td class='error_dialog_footer-start'></td><td class='error_dialog_footer'></td><td class='error_dialog_footer-end'></td></tr></tbody></table><div class='errorMessage' id='errordetail' style='display: none; margin-top: 10px;'>oracle.xdo.XDOException: oracle.xdo.XDOException: oracle.xdo.XDOException: Could not get data source connection for: WSS</div></div></head>
+<body>
+    <form name="form1" method="post" action="wss_get_pdf_bill.aspx" id="form1">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJNzgzNDMwNTMzZGQRoeq8FaT59mRS9VKEjjAm3A4r/A==" />
+</div>
+
+    <div>
+    
+    </div>
+    </form>
+</body>
+</html>

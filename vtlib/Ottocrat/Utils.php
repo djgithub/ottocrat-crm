@@ -184,7 +184,7 @@ class Ottocrat_Utils {
 			}
 			$sql .= $suffixTableMeta;
 		}
-		$adb->pquery($sql, array()); echo 'myerror=='.$org_dieOnError;
+		$adb->pquery($sql, array());
 		$adb->dieOnError = $org_dieOnError;	
 	}
 

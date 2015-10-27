@@ -243,7 +243,7 @@ $module_url='index.php?module='.$this->getModuleName().'&view='.$module->getDeta
 	 * Function to save the current Record Model
 	 */
 	public function save() {
-		$this->getModule()->saveRecord($this);
+		$this->getModule()->saveRecord($this);// => ottocrat/Models/Module.php
 	}
 
 	/**

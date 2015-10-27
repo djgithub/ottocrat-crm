@@ -63,6 +63,7 @@ jQuery.Class("Emails_MassEdit_Js",{},{
 	 * return UI
 	 */
 	showComposeEmailForm : function(params,cb,windowName){
+
 	    app.hideModalWindow();
 		var popupInstance = Ottocrat_Popup_Js.getInstance();
 		return popupInstance.show(params,cb,windowName);

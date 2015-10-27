@@ -28,7 +28,8 @@ class Documents_Record_Model extends Ottocrat_Record_Model {
 	}
 
 	function checkFileIntegrityURL() {
-		return "javascript:Documents_Detail_Js.checkFileIntegrity('".Ottocrat_Request:: encryptLink("index.php?module=".$this->getModuleName()."&action=CheckFileIntegrity&record=".$this->getId())."')";
+	//	return "javascript:Documents_Detail_Js.checkFileIntegrity('".Ottocrat_Request:: encryptLink("index.php?module=".$this->getModuleName()."&action=CheckFileIntegrity&record=".$this->getId())."')";
+		return "javascript:Documents_Detail_Js.checkFileIntegrity('index.php?module=".$this->getModuleName()."&action=CheckFileIntegrity&record=".$this->getId()."')";//encryption is not required
 	}
 
 	function checkFileIntegrity() {

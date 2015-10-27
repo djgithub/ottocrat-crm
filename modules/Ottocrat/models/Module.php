@@ -153,7 +153,7 @@ class Ottocrat_Module_Model extends Ottocrat_Module {
 		}
 		$focus->mode = $recordModel->get('mode');
 		$focus->id = $recordModel->getId();
-		$focus->save($moduleName);
+		$focus->save($moduleName); // => data/CRMEntity.php
 		return $recordModel->setId($focus->id);
 	}
 
@@ -273,7 +273,7 @@ class Ottocrat_Module_Model extends Ottocrat_Module {
 	 */
 	public function getCreateRecordUrl() {
 		//return 'index.php?module='.$this->get('name').'&view='.$this->getEditViewName();
-		$module_url='index.php?module='.$this->get('name').'&view='.$this->getEditViewName();
+		$module_url="index.php?module=".$this->get('name')."&view=".$this->getEditViewName();
 		return Ottocrat_Request::encryptLink($module_url);
 	}
 
@@ -282,9 +282,10 @@ class Ottocrat_Module_Model extends Ottocrat_Module {
 	 * @return <String> - url
 	 */
 	public function getQuickCreateUrl() {
-		//return 'index.php?module='.$this->get('name').'&view=QuickCreateAjax';
+		return 'index.php?module='.$this->get('name').'&view=QuickCreateAjax';//encryption is not required for
+		// calendar module
 		$module_url='index.php?module='.$this->get('name').'&view=QuickCreateAjax';
-		return Ottocrat_Request::encryptLink($module_url);
+	//	return Ottocrat_Request::encryptLink($module_url);
 
 	}
 

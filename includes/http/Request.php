@@ -15,6 +15,8 @@ class Ottocrat_Request {
 	private $rawvaluemap;
 	private $defaultmap = array();
 	public $keySalt;
+	private $output = array();
+	private $encFlag=false;
 	/**
 	 * Default constructor
 	 */
@@ -22,17 +24,21 @@ class Ottocrat_Request {
 	{
 
 		// same as used in encryptLink function
-if(count($values)>0) {
+if(isset($_SERVER['QUERY_STRING']) & $_SERVER['QUERY_STRING']!='' & $_REQUEST['ENCN']!='n') {
 	$this->keySalt = '$1';
 	$queryString = rtrim(mcrypt_decrypt(MCRYPT_RIJNDAEL_256, md5($this->keySalt), urldecode(base64_decode($_SERVER['QUERY_STRING'])), MCRYPT_MODE_CBC, md5(md5($this->keySalt))), "\0");   //this line of code decrypt the query string
-    parse_str($queryString, $output);
-
-	if(isset($_POST))
-		$output=array_merge_recursive($output,$_POST);
-	$this->valuemap = $output;
-	$this->rawvaluemap = $output;
+	parse_str($queryString,$this->output);
+	$this->valuemap = $this->output;
+	$this->rawvaluemap = $this->output;
+	$this->encFlag=true;
 }
-		else {
+	if(isset($_POST) & $_REQUEST['ENCN']!='n'){
+		$this->output=array_merge_recursive($this->output,$_POST);
+	$this->valuemap = $this->output;
+	$this->rawvaluemap = $this->output;
+	$this->encFlag=true;
+}
+	if($_REQUEST['ENCN']!='y' & $this->encFlag==false) {
 			$this->valuemap = $values;
 			$this->rawvaluemap = $rawvalues;
 		}
@@ -40,7 +46,7 @@ if(count($values)>0) {
 			$this->valuemap = $this->stripslashes_recursive($this->valuemap);
             $this->rawvaluemap = $this->stripslashes_recursive($this->rawvaluemap);
 		}
-
+		$this->output='';
 		//print_r($output);die;
 	}
 

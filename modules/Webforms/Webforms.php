@@ -60,8 +60,8 @@ class Webforms {
 
 			$result=$adb->pquery('SELECT 1 FROM ottocrat_settings_field WHERE name=?',array($this->LBL_WEBFORMS));
 			if(!$adb->num_rows($result)){
-				$adb->pquery('INSERT INTO ottocrat_settings_field(fieldid, blockid, name, iconpath, description, linkto, sequence)
-					VALUES (?,?,?,?,?,?,?)', array($fieldid, $blockid, $this->LBL_WEBFORMS , 'modules/Webforms/img/Webform.png', 'Allows you to manage Webforms', Ottocrat_Request:: encryptLink('index.php?module=Webforms&action=index&parenttab=Settings'), $seq));
+				$adb->pquery('INSERT INTO ottocrat_settings_field(fieldid, blockid, name, iconpath, description, linkto, sequence,active)
+					VALUES (?,?,?,?,?,?,?,?)', array($fieldid, $blockid, $this->LBL_WEBFORMS , 'modules/Webforms/img/Webform.png', 'Allows you to manage Webforms', Ottocrat_Request:: encryptLink('index.php?module=Webforms&action=index&parenttab=Settings'), $seq,1));
 			}			
 		}
 

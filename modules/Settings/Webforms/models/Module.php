@@ -17,7 +17,8 @@ class Settings_Webforms_Module_Model extends Settings_Ottocrat_Module_Model {
 	var $name = 'Webforms';
 
 	public static function getSupportedModulesList() {
-		$webformModules = array('Contacts','Accounts','Leads','Potentials','HelpDesk');
+		//$webformModules = array('Contacts','Accounts','Leads','Potentials','HelpDesk'); hide for 1st phase
+		$webformModules = array();
 		$sourceModule = array();
 		foreach ($webformModules as $key => $moduleName) {
 			$moduleModel = Ottocrat_Module_Model::getInstance($moduleName);

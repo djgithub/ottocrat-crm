@@ -17,6 +17,7 @@
 			<div class="clearfix"></div>
 		</div>
 		<div class="listViewContentDiv" id="listViewContents" style="padding: 1%;">
+			<div>As the name itself says, picklist is a dropdown field with list of options available, within which, only one option can be selected.For instance, Lead status in Leads module. Picklist Editor can be used to customize the picklist values in different modules.Select a role before performing global actions such as add, edit and, delete; as the picklist values vary across roles.</div>
 			<br>
 			<div class="row-fluid">
 				<label class="fieldLabel span3"><strong>{vtranslate('LBL_SELECT_MODULE',$QUALIFIED_MODULE)} </strong></label>

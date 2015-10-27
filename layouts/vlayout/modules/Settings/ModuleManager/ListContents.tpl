@@ -13,7 +13,7 @@
 	<div class="container-fluid" id="moduleManagerContents">
 		<div class="widget_header row-fluid">
 			<div class="span6"><h3>{vtranslate('LBL_MODULE_MANAGER', $QUALIFIED_MODULE)}</h3></div>
-			<div class="span6">
+			<!--div class="span6"> ottocrat-changes
 				<span class="btn-toolbar pull-right">
 					<span class="btn-group">
                                             <button class="btn" type="button" onclick='window.location.href="index.php?module=ExtensionStore&parent=Settings&view=ExtensionStore"'>
@@ -21,7 +21,7 @@
                                             </button>
 					</span>
 				</span>
-			</div>
+			</div-->
 		</div>
 		<hr>
 		
@@ -79,8 +79,10 @@
 				</tr>
 			</table>
 		</div>
+		{assign var=currentUser  value=Users_Record_Model::getCurrentUserModel()}
+		{if $currentUser->get('user_name') eq 'ottoadmin'}
                 <div class="row-fluid" style="padding: 20px 0px;">
                     <a href="{$IMPORT_USER_MODULE_FROM_FILE_URL}">{vtranslate('LBL_INSTALL_FROM_ZIP', $QUALIFIED_MODULE)}</a>
-                </div>
+                </div>{/if}
 	</div>
 {/strip}

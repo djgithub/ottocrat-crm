@@ -42,7 +42,7 @@ class Ottocrat_Save_Action extends Ottocrat_Action_Controller {
 	 */
 	public function saveRecord($request) {
 		$recordModel = $this->getRecordModelFromRequest($request);
-		$recordModel->save();
+		$recordModel->save(); // =>modules/Ottocrat/models/Record.php
 		if($request->get('relationOperation')) {
 			$parentModuleName = $request->get('sourceModule');
 			$parentModuleModel = Ottocrat_Module_Model::getInstance($parentModuleName);

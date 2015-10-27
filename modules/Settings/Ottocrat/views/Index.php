@@ -53,9 +53,9 @@ class Settings_Ottocrat_Index_View extends Ottocrat_Basic_View {
 				case 'MailScanner':
 					$params = 'module=Settings&action=MailScanner&parenttab=Settings';
 					break;
-				case 'WebForms':
+				/*case 'WebForms': ottocrat-changes
 					$params = 'module=Webforms&action=index&parenttab=Settings';
-					break;
+					break;*/
 				case 'CustomFields' :
 					$params = 'module=Settings&action=CustomFieldList&parenttab=Settings&formodule='.$request->get('source_module');
 					break;

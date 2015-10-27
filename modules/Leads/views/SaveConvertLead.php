@@ -81,9 +81,9 @@ class Leads_SaveConvertLead_View extends Ottocrat_View_Controller {
 		}
 
 		if(!empty($accountId)) {
-			header("Location:".Ottocrat_Request:: encryptLink(" index.php?view=Detail&module=Accounts&record=$accountId"));
+			header("Location:".Ottocrat_Request:: encryptLink("index.php?view=Detail&module=Accounts&record=$accountId"));
 		} elseif (!empty($contactId)) {
-			header("Location:".Ottocrat_Request:: encryptLink(" index.php?view=Detail&module=Contacts&record=$contactId"));
+			header("Location:".Ottocrat_Request:: encryptLink("index.php?view=Detail&module=Contacts&record=$contactId"));
 		} else {
 			$this->showError($request);
 			exit;
