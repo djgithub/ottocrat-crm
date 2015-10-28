@@ -482,7 +482,7 @@ class Accounts extends CRMEntity {
 		$entityIds = implode(',', $entityIds);
 
 		$userNameSql = getSqlForNameInDisplayFormat(array('first_name'=>'ottocrat_users.first_name', 'last_name' => 'ottocrat_users.last_name'), 'Users');
-
+//ottocrat-changes
 		$query = "SELECT case when (ottocrat_users.user_name not like '') then $userNameSql else ottocrat_groups.groupname end as user_name,ottocrat_emaildetails.from_email as from_email,replace(replace(ottocrat_emaildetails.to_email,'\"]',''),'[\"','') as saved_toid,
 			ottocrat_activity.activityid, ottocrat_activity.subject, ottocrat_activity.activitytype, ottocrat_crmentity.modifiedtime,
 			ottocrat_crmentity.crmid, ottocrat_crmentity.smownerid, ottocrat_activity.date_start,ottocrat_activity.time_start, ottocrat_seactivityrel.crmid as parent_id
@@ -496,7 +496,7 @@ class Accounts extends CRMEntity {
 				AND ottocrat_activity.activitytype='Emails'
 				AND ottocrat_account.accountid = ".$id."
 				AND ottocrat_crmentity.deleted = 0";
-echo $query;
+
 		$return_value = GetRelatedList($this_module, $related_module, $other, $query, $button, $returnset);
 
 		if($return_value == null) $return_value = Array();

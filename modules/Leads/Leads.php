@@ -311,7 +311,7 @@ class Leads extends CRMEntity {
 				$button .= "<input title='". getTranslatedString('LBL_ADD_NEW')." ". getTranslatedString($singular_modname)."' accessyKey='F' class='crmbutton small create' onclick='fnvshobj(this,\"sendmail_cont\");sendmail(\"$this_module\",$id);' type='button' name='button' value='". getTranslatedString('LBL_ADD_NEW')." ". getTranslatedString($singular_modname)."'></td>";
 			}
 		}
-
+//ottocrat-changes
 		$userNameSql = getSqlForNameInDisplayFormat(array('first_name'=>
 							'ottocrat_users.first_name', 'last_name' => 'ottocrat_users.last_name'), 'Users');
 		$query ="select case when (ottocrat_users.user_name not like '') then $userNameSql else ottocrat_groups.groupname end as user_name,ottocrat_emaildetails.from_email as from_email,replace(replace(ottocrat_emaildetails.to_email,'\"]',''),'[\"','') as saved_toid," .
