@@ -314,7 +314,7 @@ class Leads extends CRMEntity {
 
 		$userNameSql = getSqlForNameInDisplayFormat(array('first_name'=>
 							'ottocrat_users.first_name', 'last_name' => 'ottocrat_users.last_name'), 'Users');
-		$query ="select case when (ottocrat_users.user_name not like '') then $userNameSql else ottocrat_groups.groupname end as user_name," .
+		$query ="select case when (ottocrat_users.user_name not like '') then $userNameSql else ottocrat_groups.groupname end as user_name,ottocrat_emaildetails.from_email as from_email,replace(replace(ottocrat_emaildetails.to_email,'\"]',''),'[\"','') as saved_toid," .
 				" ottocrat_activity.activityid, ottocrat_activity.subject, ottocrat_activity.semodule, ottocrat_activity.activitytype," .
 				" ottocrat_activity.date_start, ottocrat_activity.time_start, ottocrat_activity.status, ottocrat_activity.priority, ottocrat_crmentity.crmid," .
 				" ottocrat_crmentity.smownerid,ottocrat_crmentity.modifiedtime, ottocrat_users.user_name, ottocrat_seactivityrel.crmid as parent_id " .
@@ -323,6 +323,7 @@ class Leads extends CRMEntity {
 				" inner join ottocrat_crmentity on ottocrat_crmentity.crmid=ottocrat_activity.activityid" .
 				" left join ottocrat_groups on ottocrat_groups.groupid=ottocrat_crmentity.smownerid" .
 				" left join ottocrat_users on  ottocrat_users.id=ottocrat_crmentity.smownerid" .
+			" left join ottocrat_emaildetails on ottocrat_activity.activityid=ottocrat_emaildetails.emailid".
 				" where ottocrat_activity.activitytype='Emails' and ottocrat_crmentity.deleted=0 and ottocrat_seactivityrel.crmid=".$id;
 
 		$return_value = GetRelatedList($this_module, $related_module, $other, $query, $button, $returnset);
