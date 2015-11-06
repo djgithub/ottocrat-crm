@@ -35,7 +35,7 @@ Class Users_Edit_View extends Users_PreferenceEdit_View {
 			$adb->resetSettings('mysqli', 'localhost', $OT_DB, $OT_USER, $OT_PASSWORD);
 
 			$uQuery = "SELECT count(*) as usercnt FROM ottocrat_users";
-
+			$adb->checkConnection();
 			$adb->database->SetFetchMode(ADODB_FETCH_ASSOC);
 			$uResult = $adb->pquery($uQuery, array());
 			$user_cnt = $adb->query_result($uResult, 0, "usercnt");

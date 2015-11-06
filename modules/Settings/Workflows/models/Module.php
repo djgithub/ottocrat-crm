@@ -54,8 +54,7 @@ class Settings_Workflows_Module_Model extends Settings_Ottocrat_Module_Model {
 	 * @return <string> - url
 	 */
 	public static function getCreateViewUrl() {
-		return "javascript:Settings_Workflows_List_Js.triggerCreate('".Ottocrat_Request:: encryptLink("index
-		.php?module=Workflows&parent=Settings&view=Edit")."')";
+		return "javascript:Settings_Workflows_List_Js.triggerCreate('".Ottocrat_Request:: encryptLink("index.php?module=Workflows&parent=Settings&view=Edit")."')";
 	}
 
 	public static function getCreateRecordUrl() {

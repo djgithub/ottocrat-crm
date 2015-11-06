@@ -53,6 +53,7 @@ Class Ottocrat_Edit_View extends Ottocrat_Index_View {
 			$maxorg_cnt = $adb->query_result($Result, 0, "organizations");
 			$maxfile_size = $adb->query_result($Result, 0, "file_storage");
 			$storage_type = $adb->query_result($Result, 0, "file_storage_type");
+			$maxuser_cnt = $adb->query_result($Result, 0, "users");
 		if($storage_type=='MB')
 			$maxfile_size=$maxfile_size*1000000;
 		else	if($storage_type=='GB')
@@ -61,9 +62,7 @@ Class Ottocrat_Edit_View extends Ottocrat_Index_View {
 			$adb->resetSettings('mysqli', 'localhost', $OT_DB, $OT_USER, $OT_PASSWORD);
 
 
-			$cloofQuery = "select (SELECT count(*)  FROM ottocrat_contactdetails) as contactcnt, (SELECT count(*)  FROM ottocrat_leaddetails) as
- leadcnt,(SELECT count(*)  FROM ottocrat_potential) as oppcnt,(SELECT count(*)  FROM ottocrat_account) as orgcnt,
- (SELECT sum(filesize)   FROM ottocrat_notes) as filesize ";
+			$cloofQuery = "select (SELECT count(*)  FROM ottocrat_contactdetails) as contactcnt, (SELECT count(*)  FROM ottocrat_leaddetails) as leadcnt,(SELECT count(*)  FROM ottocrat_potential) as oppcnt,(SELECT count(*)  FROM ottocrat_account) as orgcnt, (SELECT sum(filesize)   FROM ottocrat_notes) as filesize,(SELECT count(*)  FROM ottocrat_users) as usercnt ";
 			$adb->checkConnection();
 			$adb->database->SetFetchMode(ADODB_FETCH_ASSOC);
 			$cloofResult = $adb->pquery($cloofQuery, array());
@@ -72,6 +71,7 @@ Class Ottocrat_Edit_View extends Ottocrat_Index_View {
 			$opp_cnt = $adb->query_result($cloofResult, 0, "oppcnt");
 			$org_cnt = $adb->query_result($cloofResult, 0, "orgcnt");
 			$file_size = $adb->query_result($cloofResult, 0, "filesize");
+			$user_cnt = $adb->query_result($cloofResult, 0, "usercnt");
 
 
 
@@ -80,6 +80,7 @@ Class Ottocrat_Edit_View extends Ottocrat_Index_View {
 			if ($maxopp_cnt > $opp_cnt || $maxopp_cnt == 0) $add_opp_flg = 1;
 			if ($maxorg_cnt > $org_cnt || $maxorg_cnt == 0) $add_org_flg = 1;
 			if ($maxfile_size > $file_size || $file_size == 0) $add_file_flg = 1;
+			if ($maxuser_cnt > $user_cnt || $maxuser_cnt == 0) $add_user_flg = 1;
 
 
 		}else
@@ -90,6 +91,7 @@ Class Ottocrat_Edit_View extends Ottocrat_Index_View {
 			$add_opp_flg 		= 1;
 			$add_org_flg 		= 1;
 			$add_file_flg 		= 1;
+			$add_user_flg 		= 1;
 		}
 
 		$add_record_flg=false;
@@ -103,10 +105,15 @@ Class Ottocrat_Edit_View extends Ottocrat_Index_View {
 			$add_record_flg=$add_org_flg;
 		if($moduleName=='Documents')
 			$add_record_flg=$add_file_flg;
+		if($moduleName=='Users')
+			$add_record_flg=$add_user_flg;
 
 		$record = $request->get('record');
 		if(!$add_record_flg & $record=='')
 		{
+			if($moduleName=='Users')
+				$module_url="index.php?module=Users&parent=Settings&view=List";
+			else
 			$module_url="index.php?module=$moduleName&view=List";
 			header('Location:'.Ottocrat_Request::encryptLink($module_url));
 			exit();

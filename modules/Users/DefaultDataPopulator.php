@@ -2552,7 +2552,7 @@ Should any need arise,please do give us a call.';
 				$seq = 1;
 			}
 
-			if ($i ==7 || $i == 12|| $i == 15|| $i == 16|| $i==24) {//hide for 1st phase
+			if ($i ==7 || $i == 12|| $i == 15|| $i == 16 || $i==20  || $i==24) {//hide for 1st phase
 				$active = 1;
 			}
 			else
